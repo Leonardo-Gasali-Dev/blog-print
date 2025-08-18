@@ -1,0 +1,232 @@
+/*--------------------------------------------------------------
+ Table of Contents
+--------------------------------------------------------------*/
+/*
+
+    1. Variables
+    2. Global Styles
+    3. Typography
+    4. Layout & Structure
+    5. Header
+    6. Navbar
+    7. Main Content
+    8. Footer
+    9. Utilities
+    10. Media Queries
+
+/*--------------------------------------------------------------
+1. Variables
+--------------------------------------------------------------*/
+ :root {
+   --base-size: 1.1em;
+    --type-scale: 1.25;
+    --h3: calc(var(--base-size) * var(--type-scale));
+    --h2: calc(var(--h3) * var(--type-scale));
+    --h1: calc(var(--h2) * var(--type-scale));
+    --primary-color: #bdaf38;
+}
+
+/*--------------------------------------------------------------
+2. Global Styles
+--------------------------------------------------------------*/
+/* Base reset */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------------------
+3. Typography
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: var(--h1);
+    margin-top: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+    margin-top: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+    margin-top: var(--h3);
+}
+
+p,
+ul {
+    font-size: var(--base-size);
+    list-style-type: none;
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+4. Layout & Structure
+--------------------------------------------------------------*/
+.wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+/*--------------------------------------------------------------
+5. Header
+--------------------------------------------------------------*/
+header {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header img {
+    border-radius: 0;
+    max-width: 75px;
+    width: auto;
+}
+
+img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+6. Navbar
+--------------------------------------------------------------*/
+nav ul {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    font-size: var(--h3);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+
+nav a {
+    color: black;
+    display: block;
+    padding: 1rem;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/*--------------------------------------------------------------
+7. Main
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+8. Footer
+--------------------------------------------------------------*/
+footer {
+    background-color: #f0f0f0;
+    border-bottom: 50px solid #333;
+    border-top: 1px solid #ccc;
+    padding: 5rem 0;
+}
+
+.footer {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.social [target="_blank"] {
+    font-size: var(--h1);
+    margin-right: 0.5rem;
+}
+
+/*--------------------------------------------------------------
+9. Utilities
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+10. Media Queries
+--------------------------------------------------------------*/
+@media (min-width: 650px) {
+    header {
+        text-align: left;
+    }
+
+    header img {
+        width: auto;
+        max-height: 133px;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 5rem;
+        margin-bottom: 5rem;
+    }
+
+    aside {
+        margin-top: 3rem;
+        --base-size: 1rem;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    article {
+        margin-right: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    aside {
+        margin-top: 10rem;
+        --base-size: 0.9rem;
+    }
+
+    .sidebar {
+        display: block;
+    }
+}
