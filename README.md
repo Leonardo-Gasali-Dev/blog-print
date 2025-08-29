@@ -4,7 +4,7 @@ Blog Print Style practica.
 
 ## Descripción
 
-Print con buenas practicas.
+Print con Media Queries, buenas practicas.
 
 ## Tecnologías
 

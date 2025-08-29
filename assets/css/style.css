@@ -13,12 +13,13 @@
     8. Footer
     9. Utilities
     10. Media Queries
+    11.Print Media Queries
 
 /*--------------------------------------------------------------
 1. Variables
 --------------------------------------------------------------*/
  :root {
-   --base-size: 1.1em;
+    --base-size: 1.1em;
     --type-scale: 1.25;
     --h3: calc(var(--base-size) * var(--type-scale));
     --h2: calc(var(--h3) * var(--type-scale));
@@ -43,7 +44,7 @@ html {
 
 
 body {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Source Code Pro", monospace;
     margin: 0;
     padding: 0;
 }
@@ -80,7 +81,7 @@ h3 {
 p,
 ul {
     font-size: var(--base-size);
-    list-style-type: none;
+
 }
 
 p {
@@ -89,7 +90,7 @@ p {
 
 a {
     color: var(--primary-color);
-    text-decoration: none;
+
 }
 
 /*--------------------------------------------------------------
@@ -111,7 +112,7 @@ header {
 
 header img {
     border-radius: 0;
-    max-width: 75px;
+    max-height: 75px;
     width: auto;
 }
 
@@ -141,6 +142,7 @@ nav a {
     color: black;
     display: block;
     padding: 1rem;
+    text-decoration: none;
 }
 
 nav a:hover {
@@ -230,3 +232,56 @@ footer {
         display: block;
     }
 }
+
+/*--------------------------------------------------------------
+11. Print Media Queries
+--------------------------------------------------------------*/
+/* Oculta navbar y img de articulo */
+@media print {
+    nav, article img {
+        display: none;
+    }
+/* Elementos uno debajo del otro */
+    .sidebar, 
+    .footer, 
+    .content {
+        display: block;
+    }
+/* Fuente mas legible para print */  
+    body {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+/* Reformatea las variables */  
+    :root {
+        --base-size: 0.8em;
+        --type-scale: 1.25;
+    }
+    header {
+        text-align: left;
+    }
+/* Cambia el tamaño de las imagenes */  
+    img {
+        max-height: 0.5in;
+        float: left;
+        margin: 0 0.25in 0.25in 0;
+    }
+
+    aside {
+        clear: both;
+    }
+
+    .content {
+        clear: both;
+    }
+
+    h1 {
+        margin-top: auto;
+    }
+
+    footer {
+        border-bottom: none;
+    }
+}
+
+
+
