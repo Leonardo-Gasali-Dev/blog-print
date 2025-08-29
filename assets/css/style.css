@@ -233,11 +233,24 @@ footer {
     }
 }
 
+/* Muestra información al imprimir */
+@media screen {
+    .printonly {
+    display: none;
+}
+}
+
+
 /*--------------------------------------------------------------
 11. Print Media Queries
 --------------------------------------------------------------*/
-/* Oculta navbar y img de articulo */
 @media print {
+/* Muestra información al imprimir */    
+    .printonly {
+        /* display: block; */
+        clear: both;
+    }
+/* Oculta navbar y img de articulo */
     nav, article img {
         display: none;
     }
