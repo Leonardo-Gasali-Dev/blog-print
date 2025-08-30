@@ -1,6 +1,6 @@
 # 🚀 Blog-Print-Style
 
-Blog Print Style practica.
+Blog Print Style práctica.
 
 ## Descripción
 
