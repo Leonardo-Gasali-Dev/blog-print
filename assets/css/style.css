@@ -233,46 +233,62 @@ footer {
     }
 }
 
-/* Muestra información al imprimir */
-@media screen {
-    .printonly {
-    display: none;
-}
-}
-
 
 /*--------------------------------------------------------------
 11. Print Media Queries
 --------------------------------------------------------------*/
 @media print {
-/* Muestra información al imprimir */    
+
+    /* Muestra información al imprimir */
     .printonly {
         /* display: block; */
         clear: both;
     }
-/* Oculta navbar y img de articulo */
-    nav, article img {
+
+    /* Muestra URL de Links and Social media */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: var(--base-size);
+    }
+    /* Links and Social media en bloque */
+    .social a[href] {
+        display: block;
+        margin-bottom: 0.25in;
+    }
+    /* Remueve parentesis de Links and Social media en bloque */
+    .social a[href]::after {
+        content: " "attr(href);
+    }
+
+    /* Oculta navbar y img de articulo */
+    nav,
+    article img {
         display: none;
     }
-/* Elementos uno debajo del otro */
-    .sidebar, 
-    .footer, 
+
+    /* Elementos uno debajo del otro */
+    .sidebar,
+    .footer,
     .content {
         display: block;
     }
-/* Fuente mas legible para print */  
+
+    /* Fuente mas legible para print */
     body {
         font-family: Georgia, 'Times New Roman', Times, serif;
     }
-/* Reformatea las variables */  
+
+    /* Reformatea las variables */
     :root {
         --base-size: 0.8em;
         --type-scale: 1.25;
     }
+
     header {
         text-align: left;
     }
-/* Cambia el tamaño de las imagenes */  
+
+    /* Cambia el tamaño de las imagenes */
     img {
         max-height: 0.5in;
         float: left;
@@ -296,5 +312,23 @@ footer {
     }
 }
 
+/* Muestra información al imprimir */
+@media screen {
+    .printonly {
+        display: none;
+    }
+}
 
+/* Cambia el color de la fuente al imprimir en landscape */
+@media print and (orientation: landscape) {
+    body {
+        color: red;
+    }
+}
 
+/* Cambia el color de la fuente al imprimir */
+/* @media print and (min-width: 6.5in) {
+    body {
+        color: red;
+    }
+} */
